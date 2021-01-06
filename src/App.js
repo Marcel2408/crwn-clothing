@@ -14,3 +14,10 @@ function App() {
 }
 
 export default App;
+/*
+style collection-preview
+create collection-item
+style collection-item (except the 'add to cart' btn)
+style padding on body in app.css
+todo commit all changes
+*/
