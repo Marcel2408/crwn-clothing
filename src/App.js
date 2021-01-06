@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./components/header/header.component";
 import Homepage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shopPage.component";
+import SignInSignUpPage from "./pages/sign-in-sign-up/sign-in-sign-up.component";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/shop" component={ShopPage} />
+        <Route exact path="/sign-in" component={SignInSignUpPage} />
       </Switch>
     </>
   );
@@ -19,8 +21,8 @@ function App() {
 
 export default App;
 /*
-create header
-create links to home (logo) & shop & contact
-style header
-todo commit all changes
+create customButton with children prop
+todo style customButton
+todo update style sign-in
+commit all changes
 */
