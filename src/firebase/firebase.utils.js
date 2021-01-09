@@ -25,6 +25,29 @@ provider.setCustomParameters({ prompt: "select_account" }); //always trigger the
 
 export const signInWithGoogle = () => auth.signInWithPopup(provider); //triggers the popup with the provider (google auth), this func is triggered onClick in the component
 
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+  if (!userAuth) return; //if no user is signed, do nothing
+
+  const userRef = firestore.doc(`users/${userAuth.uid}`); //ref to the specific user signing in
+
+  const snapshot = await userRef.get(); //user object
+  const { displayName, email } = userAuth;
+  const createdAt = new Date();
+  try {
+    if (!snapshot.exists) {
+      await userRef.set({
+        createdAt,
+        displayName,
+        email,
+        ...additionalData,
+      });
+    }
+  } catch (error) {
+    console.log("error creating user ", error);
+  }
+  return userRef; //to listen to updates or store it in the app state
+};
+
 export default firebase; //just in case we want the whole library
 
 // this works with Google enabled as auth method on Firebase console for this project
