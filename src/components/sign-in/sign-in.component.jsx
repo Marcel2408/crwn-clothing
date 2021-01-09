@@ -14,8 +14,6 @@ class SignIn extends React.Component {
   }
 
   handleChange = (e) => {
-    console.log("e.target ", e.target.value);
-    console.log("this.state.email ", this.state.email);
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };

@@ -59,7 +59,10 @@ class App extends React.Component {
 
 export default App;
 /*
-todo update my app state with the current user from Firebase or null
+todo create signup component with name, email, password, confirm password and button
+
+todo create handlers for submitting and for changes in the field to update state on every field.
+ user from Firebase or null
 style
 commit all changes
 
