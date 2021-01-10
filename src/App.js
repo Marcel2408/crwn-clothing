@@ -62,12 +62,11 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => ({
   currentUser: state.user.currentUser,
-});
+}); //? params could be destructured as {user: {currentUser}}
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 /*
- user from Firebase or null
-style
-commit all changes (redux, userReducer and userActions)
+todo create cart-dropdown component and styles
+commit all changes
 
 */
